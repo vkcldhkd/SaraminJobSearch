@@ -1,0 +1,6 @@
+framework module Pods_SaraminSearch {
+  umbrella header "Pods-SaraminSearch-umbrella.h"
+
+  export *
+  module * { export * }
+}

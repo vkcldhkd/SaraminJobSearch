@@ -1,0 +1,6 @@
+framework module Pods_SaraminSearchUITests {
+  umbrella header "Pods-SaraminSearchUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
