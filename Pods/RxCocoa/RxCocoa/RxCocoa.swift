@@ -8,7 +8,9 @@
 
 import class Foundation.NSNull
 
+#if !RX_NO_MODULE
 import RxSwift
+#endif
 #if os(iOS)
     import UIKit
 #endif
@@ -145,8 +147,11 @@ let delegateNotSet = "Delegate not set"
 
 // MARK: Shared with RxSwift
 
+#if !RX_NO_MODULE
+
 func rxFatalError(_ lastMessage: String) -> Never  {
     // The temptation to comment this line is great, but please don't, it's for your own good. The choice is yours.
     fatalError(lastMessage)
 }
 
+#endif

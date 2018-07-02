@@ -8,8 +8,10 @@
 
 #if os(iOS)
 
-import UIKit
-import RxSwift
+    import UIKit
+#if !RX_NO_MODULE
+    import RxSwift
+#endif
 
 extension UIPickerView: HasDataSource {
     public typealias DataSource = UIPickerViewDataSource

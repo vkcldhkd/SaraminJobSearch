@@ -6,7 +6,10 @@
 //  Copyright © 2016 Krunoslav Zaher. All rights reserved.
 //
 
-import RxSwift
+#if !RX_NO_MODULE
+    import RxSwift
+#endif
+
 
 /**
  Trait that represents observable sequence with following properties:

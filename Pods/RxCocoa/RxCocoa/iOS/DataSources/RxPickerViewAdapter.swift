@@ -7,9 +7,10 @@
 //
 
 #if os(iOS)
-
-import UIKit
-import RxSwift
+    import UIKit
+#if !RX_NO_MODULE
+    import RxSwift
+#endif
 
 class RxPickerViewArrayDataSource<T>: NSObject, UIPickerViewDataSource, SectionedViewDataSourceType {
     fileprivate var items: [T] = []

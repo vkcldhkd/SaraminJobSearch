@@ -8,15 +8,17 @@
 
 #if !os(Linux)
 
+#if !RX_NO_MODULE
     import RxSwift
-    #if SWIFT_PACKAGE && !os(Linux)
-        import RxCocoaRuntime
-    #endif
+#if SWIFT_PACKAGE && !os(Linux)
+    import RxCocoaRuntime
+#endif
+#endif
 
     /// Base class for `DelegateProxyType` protocol.
     ///
     /// This implementation is not thread safe and can be used only from one thread (Main thread).
-    open class DelegateProxy<P: AnyObject, D>: _RXDelegateProxy {
+    open class DelegateProxy<P: AnyObject, D: AnyObject>: _RXDelegateProxy {
         public typealias ParentObject = P
         public typealias Delegate = D
 
@@ -26,8 +28,8 @@
         /// Parent object associated with delegate proxy.
         private weak private(set) var _parentObject: ParentObject?
 
-        fileprivate let _currentDelegateFor: (ParentObject) -> AnyObject?
-        fileprivate let _setCurrentDelegateTo: (AnyObject?, ParentObject) -> ()
+        fileprivate let _currentDelegateFor: (ParentObject) -> Delegate?
+        fileprivate let _setCurrentDelegateTo: (Delegate?, ParentObject) -> ()
 
         /// Initializes new instance.
         ///
@@ -35,8 +37,8 @@
         public init<Proxy: DelegateProxyType>(parentObject: ParentObject, delegateProxy: Proxy.Type)
             where Proxy: DelegateProxy<ParentObject, Delegate>, Proxy.ParentObject == ParentObject, Proxy.Delegate == Delegate {
             self._parentObject = parentObject
-            self._currentDelegateFor = delegateProxy._currentDelegate
-            self._setCurrentDelegateTo = delegateProxy._setCurrentDelegate
+            self._currentDelegateFor = delegateProxy.currentDelegate(for:)
+            self._setCurrentDelegateTo = delegateProxy.setCurrentDelegate(_:to:)
 
             MainScheduler.ensureExecutingOnScheduler()
             #if TRACE_RESOURCES
@@ -89,6 +91,7 @@
          */
         open func sentMessage(_ selector: Selector) -> Observable<[Any]> {
             MainScheduler.ensureExecutingOnScheduler()
+            checkSelectorIsObservable(selector)
 
             let subject = _sentMessageForSelector[selector]
 
@@ -96,7 +99,7 @@
                 return subject.asObservable()
             }
             else {
-                let subject = MessageDispatcher(selector: selector, delegateProxy: self)
+                let subject = MessageDispatcher(delegateProxy: self)
                 _sentMessageForSelector[selector] = subject
                 return subject.asObservable()
             }
@@ -146,6 +149,7 @@
          */
         open func methodInvoked(_ selector: Selector) -> Observable<[Any]> {
             MainScheduler.ensureExecutingOnScheduler()
+            checkSelectorIsObservable(selector)
 
             let subject = _methodInvokedForSelector[selector]
 
@@ -153,29 +157,22 @@
                 return subject.asObservable()
             }
             else {
-                let subject = MessageDispatcher(selector: selector, delegateProxy: self)
+                let subject = MessageDispatcher(delegateProxy: self)
                 _methodInvokedForSelector[selector] = subject
                 return subject.asObservable()
             }
         }
 
-        fileprivate func checkSelectorIsObservable(_ selector: Selector) {
+        private func checkSelectorIsObservable(_ selector: Selector) {
             MainScheduler.ensureExecutingOnScheduler()
 
             if hasWiredImplementation(for: selector) {
-                print("⚠️ Delegate proxy is already implementing `\(selector)`, a more performant way of registering might exist.")
+                print("Delegate proxy is already implementing `\(selector)`, a more performant way of registering might exist.")
                 return
             }
 
-            if voidDelegateMethodsContain(selector) {
-                return
-            }
-
-            // In case `_forwardToDelegate` is `nil`, it is assumed the check is being done prematurely.
-            if !(self._forwardToDelegate?.responds(to: selector) ?? true) {
-                print("⚠️ Using delegate proxy dynamic interception method but the target delegate object doesn't respond to the requested selector. " +
-                    "In case pure Swift delegate proxy is being used please use manual observing method by using`PublishSubject`s. " +
-                    " (selector: `\(selector)`, forwardToDelegate: `\(_forwardToDelegate ?? self)`)")
+            guard ((self.forwardToDelegate() as? NSObject)?.responds(to: selector) ?? false) || voidDelegateMethodsContain(selector) else {
+                rxFatalError("This class doesn't respond to selector \(selector)")
             }
         }
 
@@ -207,15 +204,6 @@
                 MainScheduler.ensureExecutingOnScheduler()
             #endif
             self._setForwardToDelegate(delegate, retainDelegate: retainDelegate)
-
-            let sentSelectors: [Selector] = self._sentMessageForSelector.values.filter { $0.hasObservers }.map { $0.selector }
-            let invokedSelectors: [Selector] = self._methodInvokedForSelector.values.filter { $0.hasObservers }.map { $0.selector }
-            let allUsedSelectors = sentSelectors + invokedSelectors
-
-            for selector in Set(allUsedSelectors) {
-                checkSelectorIsObservable(selector)
-            }
-
             self.reset()
         }
 
@@ -262,17 +250,14 @@
         private let dispatcher: PublishSubject<[Any]>
         private let result: Observable<[Any]>
 
-        fileprivate let selector: Selector
-
-        init<P, D>(selector: Selector, delegateProxy _delegateProxy: DelegateProxy<P, D>) {
+        init<P, D>(delegateProxy _delegateProxy: DelegateProxy<P, D>) {
             weak var weakDelegateProxy = _delegateProxy
 
             let dispatcher = PublishSubject<[Any]>()
             self.dispatcher = dispatcher
-            self.selector = selector
 
             self.result = dispatcher
-                .do(onSubscribed: { weakDelegateProxy?.checkSelectorIsObservable(selector); weakDelegateProxy?.reset() }, onDispose: { weakDelegateProxy?.reset() })
+                .do(onSubscribed: { weakDelegateProxy?.reset() }, onDispose: { weakDelegateProxy?.reset() })
                 .share()
                 .subscribeOn(mainScheduler)
         }

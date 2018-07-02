@@ -9,22 +9,24 @@
 #if !os(Linux)
 
 import Foundation.NSObject
-import RxSwift
+#if !RX_NO_MODULE
+    import RxSwift
+#endif
 
-/// Key value observing options
-public struct KeyValueObservingOptions: OptionSet {
-    /// Raw value
-    public let rawValue: UInt
+    /// Key value observing options
+    public struct KeyValueObservingOptions: OptionSet {
+        /// Raw value
+        public let rawValue: UInt
 
-    public init(rawValue: UInt) {
-        self.rawValue = rawValue
+        public init(rawValue: UInt) {
+            self.rawValue = rawValue
+        }
+
+        /// Whether a sequence element should be sent to the observer immediately, before the subscribe method even returns.
+        public static let initial = KeyValueObservingOptions(rawValue: 1 << 0)
+        /// Whether to send updated values.
+        public static let new = KeyValueObservingOptions(rawValue: 1 << 1)
     }
-
-    /// Whether a sequence element should be sent to the observer immediately, before the subscribe method even returns.
-    public static let initial = KeyValueObservingOptions(rawValue: 1 << 0)
-    /// Whether to send updated values.
-    public static let new = KeyValueObservingOptions(rawValue: 1 << 1)
-}
 
 extension Reactive where Base: NSObject {
 

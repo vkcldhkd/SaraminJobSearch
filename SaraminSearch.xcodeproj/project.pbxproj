@@ -17,6 +17,17 @@
 		8A943C5220E3847A00580920 /* SaraminJobSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A943C5120E3847A00580920 /* SaraminJobSearchTests.swift */; };
 		8A943C5D20E3847A00580920 /* SaraminJobSearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A943C5C20E3847A00580920 /* SaraminJobSearchUITests.swift */; };
 		8A943C7120E385AA00580920 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A943C7020E385AA00580920 /* Launch Screen.storyboard */; };
+		8A943C7420E38A7E00580920 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A943C7320E38A7E00580920 /* UIViewController.swift */; };
+		8A943C7620E38AB000580920 /* LogHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A943C7520E38AB000580920 /* LogHelper.swift */; };
+		8A943C7920E38BAD00580920 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A943C7820E38BAD00580920 /* Constants.swift */; };
+		8A943C7B20E38BE300580920 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A943C7A20E38BE300580920 /* RequestManager.swift */; };
+		8A943C7F20E38D3D00580920 /* JobViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A943C7D20E38D3D00580920 /* JobViewCell.swift */; };
+		8A943C8020E38D3D00580920 /* JobViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A943C7E20E38D3D00580920 /* JobViewCell.xib */; };
+		8A943C8220E38D5F00580920 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A943C8120E38D5F00580920 /* UITableView.swift */; };
+		8A943C8420E3A23200580920 /* MainViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A943C8320E3A23200580920 /* MainViewReactor.swift */; };
+		8A943C8620E3A57000580920 /* DataResponser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A943C8520E3A57000580920 /* DataResponser.swift */; };
+		8A943C8820E3A5F700580920 /* Constants_apis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A943C8720E3A5F700580920 /* Constants_apis.swift */; };
+		8ABC0B3A20E48C530007B53B /* XMLHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABC0B3920E48C530007B53B /* XMLHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +67,17 @@
 		8A943C5C20E3847A00580920 /* SaraminJobSearchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaraminJobSearchUITests.swift; sourceTree = "<group>"; };
 		8A943C5E20E3847A00580920 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A943C7020E385AA00580920 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		8A943C7320E38A7E00580920 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		8A943C7520E38AB000580920 /* LogHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogHelper.swift; sourceTree = "<group>"; };
+		8A943C7820E38BAD00580920 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8A943C7A20E38BE300580920 /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
+		8A943C7D20E38D3D00580920 /* JobViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobViewCell.swift; sourceTree = "<group>"; };
+		8A943C7E20E38D3D00580920 /* JobViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JobViewCell.xib; sourceTree = "<group>"; };
+		8A943C8120E38D5F00580920 /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
+		8A943C8320E3A23200580920 /* MainViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewReactor.swift; sourceTree = "<group>"; };
+		8A943C8520E3A57000580920 /* DataResponser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataResponser.swift; sourceTree = "<group>"; };
+		8A943C8720E3A5F700580920 /* Constants_apis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants_apis.swift; sourceTree = "<group>"; };
+		8ABC0B3920E48C530007B53B /* XMLHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLHelper.swift; sourceTree = "<group>"; };
 		B4B512D5830C0E029D6C7D39 /* Pods_SaraminSearch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SaraminSearch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0547D4AB1317A858436436D /* Pods_SaraminSearchTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SaraminSearchTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6135532A035394F000BC334 /* Pods-SaraminSearch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SaraminSearch.release.xcconfig"; path = "Pods/Target Support Files/Pods-SaraminSearch/Pods-SaraminSearch.release.xcconfig"; sourceTree = "<group>"; };
@@ -115,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				8A943C6A20E3852A00580920 /* Extension */,
+				8A943C7720E38B8600580920 /* Model */,
 				8A943C6B20E3853100580920 /* Helper */,
 				8A943C6D20E3853D00580920 /* View */,
 				8A943C6C20E3853900580920 /* ViewController */,
@@ -145,6 +168,8 @@
 		8A943C6A20E3852A00580920 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				8A943C7320E38A7E00580920 /* UIViewController.swift */,
+				8A943C8120E38D5F00580920 /* UITableView.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -152,6 +177,12 @@
 		8A943C6B20E3853100580920 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				8A943C7820E38BAD00580920 /* Constants.swift */,
+				8A943C8720E3A5F700580920 /* Constants_apis.swift */,
+				8A943C7520E38AB000580920 /* LogHelper.swift */,
+				8A943C7A20E38BE300580920 /* RequestManager.swift */,
+				8A943C8520E3A57000580920 /* DataResponser.swift */,
+				8ABC0B3920E48C530007B53B /* XMLHelper.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -160,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				8A943C3E20E3847700580920 /* MainViewController.swift */,
+				8A943C8320E3A23200580920 /* MainViewReactor.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -167,6 +199,7 @@
 		8A943C6D20E3853D00580920 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8A943C7C20E38D1E00580920 /* TableView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -188,6 +221,22 @@
 				8A943C4820E3847900580920 /* Info.plist */,
 			);
 			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		8A943C7720E38B8600580920 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8A943C7C20E38D1E00580920 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				8A943C7D20E38D3D00580920 /* JobViewCell.swift */,
+				8A943C7E20E38D3D00580920 /* JobViewCell.xib */,
+			);
+			path = TableView;
 			sourceTree = "<group>";
 		};
 		A6E3B136C81708F97D61EA97 /* Frameworks */ = {
@@ -224,7 +273,7 @@
 				8A943C3520E3847700580920 /* Sources */,
 				8A943C3620E3847700580920 /* Frameworks */,
 				8A943C3720E3847700580920 /* Resources */,
-				FB47062E0FC5A6719417CEA4 /* [CP] Embed Pods Frameworks */,
+				DE871D359AE584300C6C140A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -323,6 +372,7 @@
 			files = (
 				8A943C7120E385AA00580920 /* Launch Screen.storyboard in Resources */,
 				8A943C4420E3847900580920 /* Assets.xcassets in Resources */,
+				8A943C8020E38D3D00580920 /* JobViewCell.xib in Resources */,
 				8A943C4220E3847700580920 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -398,7 +448,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FB47062E0FC5A6719417CEA4 /* [CP] Embed Pods Frameworks */ = {
+		DE871D359AE584300C6C140A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -406,22 +456,20 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SaraminSearch/Pods-SaraminSearch-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactorKit/ReactorKit.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAlamofire/RxAlamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
-				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyXMLParser/SwiftyXMLParser.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactorKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAlamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyXMLParser.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -435,8 +483,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A943C7920E38BAD00580920 /* Constants.swift in Sources */,
+				8A943C7B20E38BE300580920 /* RequestManager.swift in Sources */,
+				8A943C7620E38AB000580920 /* LogHelper.swift in Sources */,
+				8A943C8620E3A57000580920 /* DataResponser.swift in Sources */,
 				8A943C3F20E3847700580920 /* MainViewController.swift in Sources */,
 				8A943C3D20E3847700580920 /* AppDelegate.swift in Sources */,
+				8A943C8220E38D5F00580920 /* UITableView.swift in Sources */,
+				8ABC0B3A20E48C530007B53B /* XMLHelper.swift in Sources */,
+				8A943C7F20E38D3D00580920 /* JobViewCell.swift in Sources */,
+				8A943C8420E3A23200580920 /* MainViewReactor.swift in Sources */,
+				8A943C8820E3A5F700580920 /* Constants_apis.swift in Sources */,
+				8A943C7420E38A7E00580920 /* UIViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

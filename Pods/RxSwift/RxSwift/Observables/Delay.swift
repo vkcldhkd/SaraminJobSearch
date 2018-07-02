@@ -80,13 +80,13 @@ final fileprivate class DelaySink<O: ObserverType>
             _lock.lock() // {
                 let errorEvent = _errorEvent
 
-                let eventToForwardImmediately = ranAtLeastOnce ? nil : _queue.dequeue()?.event
+                let eventToForwardImmediatelly = ranAtLeastOnce ? nil : _queue.dequeue()?.event
                 let nextEventToScheduleOriginalTime: Date? = ranAtLeastOnce && !_queue.isEmpty ? _queue.peek().eventTime : nil
 
                 if let _ = errorEvent {
                 }
                 else  {
-                    if let _ = eventToForwardImmediately {
+                    if let _ = eventToForwardImmediatelly {
                     }
                     else if let _ = nextEventToScheduleOriginalTime {
                         _running = false
@@ -104,10 +104,10 @@ final fileprivate class DelaySink<O: ObserverType>
                 return
             }
             else {
-                if let eventToForwardImmediately = eventToForwardImmediately {
+                if let eventToForwardImmediatelly = eventToForwardImmediatelly {
                     ranAtLeastOnce = true
-                    self.forwardOn(eventToForwardImmediately)
-                    if case .completed = eventToForwardImmediately {
+                    self.forwardOn(eventToForwardImmediatelly)
+                    if case .completed = eventToForwardImmediatelly {
                         self.dispose()
                         return
                     }
@@ -134,12 +134,12 @@ final fileprivate class DelaySink<O: ObserverType>
         switch event {
         case .error(_):
             _lock.lock()    // {
-                let shouldSendImmediately = !_running
+                let shouldSendImmediatelly = !_running
                 _queue = Queue(capacity: 0)
                 _errorEvent = event
             _lock.unlock()  // }
 
-            if shouldSendImmediately {
+            if shouldSendImmediatelly {
                 forwardOn(event)
                 dispose()
             }

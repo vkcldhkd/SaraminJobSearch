@@ -21,17 +21,10 @@
                             <searchBar contentMode="redraw" placeholder="키워드를 입력해 주세요." translatesAutoresizingMaskIntoConstraints="NO" id="TmN-VM-M7A">
                                 <rect key="frame" x="0.0" y="64" width="375" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Yez-XK-r4O"/>
-                                </connections>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RJm-EY-xmm">
                                 <rect key="frame" x="0.0" y="120" width="375" height="547"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="DpK-Up-Mbj"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="jvm-zj-yb9"/>
-                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -48,19 +41,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="vGo-Q3-f7u"/>
                     <connections>
-                        <outlet property="searchDisplayController" destination="OR2-YC-d5h" id="KUK-hL-KUX"/>
+                        <outlet property="itemTableView" destination="RJm-EY-xmm" id="G6V-BJ-aGY"/>
+                        <outlet property="searchBar" destination="TmN-VM-M7A" id="P4H-nr-jpz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="OR2-YC-d5h">
-                    <connections>
-                        <outlet property="delegate" destination="BYZ-38-t0r" id="qqZ-3O-gFU"/>
-                        <outlet property="searchBar" destination="TmN-VM-M7A" id="2a0-UY-wUe"/>
-                        <outlet property="searchContentsController" destination="BYZ-38-t0r" id="OIX-jg-BI6"/>
-                        <outlet property="searchResultsDataSource" destination="BYZ-38-t0r" id="7bq-Au-tnA"/>
-                        <outlet property="searchResultsDelegate" destination="BYZ-38-t0r" id="3BB-Tk-tYp"/>
-                    </connections>
-                </searchDisplayController>
+                <searchDisplayController id="OR2-YC-d5h"/>
             </objects>
             <point key="canvasLocation" x="1076" y="133.5832083958021"/>
         </scene>
