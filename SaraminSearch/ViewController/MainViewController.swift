@@ -28,6 +28,10 @@ class MainViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.title = "사람인 검색"
+    }
 }
 
 extension MainViewController : StoryboardView{
