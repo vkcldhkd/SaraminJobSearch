@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4B4CC5F850B6F1E975638832 /* Pods_SaraminSearchUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68F083B0D8C788A2A483E8D3 /* Pods_SaraminSearchUITests.framework */; };
+		63C5951E221BD4C2009CECC5 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C5951D221BD4C2009CECC5 /* String.swift */; };
+		63C59520221BD4F4009CECC5 /* UnicodeScalar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C5951F221BD4F4009CECC5 /* UnicodeScalar.swift */; };
 		66D8D2C1B3DC211A75174659 /* Pods_SaraminSearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4B512D5830C0E029D6C7D39 /* Pods_SaraminSearch.framework */; };
 		678C1D49C35C7B91BAAD23A2 /* Pods_SaraminSearchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0547D4AB1317A858436436D /* Pods_SaraminSearchTests.framework */; };
 		8A943C3D20E3847700580920 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A943C3C20E3847700580920 /* AppDelegate.swift */; };
@@ -52,6 +54,8 @@
 		38D1F715CFA71DE6F657FD60 /* Pods-SaraminSearchTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SaraminSearchTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SaraminSearchTests/Pods-SaraminSearchTests.release.xcconfig"; sourceTree = "<group>"; };
 		4D57CBE7435A8716789AD4E2 /* Pods-SaraminSearchTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SaraminSearchTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SaraminSearchTests/Pods-SaraminSearchTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4FF37F709C7D65BFDCCDEB2E /* Pods-SaraminSearchUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SaraminSearchUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SaraminSearchUITests/Pods-SaraminSearchUITests.release.xcconfig"; sourceTree = "<group>"; };
+		63C5951D221BD4C2009CECC5 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		63C5951F221BD4F4009CECC5 /* UnicodeScalar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnicodeScalar.swift; sourceTree = "<group>"; };
 		68F083B0D8C788A2A483E8D3 /* Pods_SaraminSearchUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SaraminSearchUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7ACDDE9DFA6EB5AF7E170A51 /* Pods-SaraminSearchUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SaraminSearchUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SaraminSearchUITests/Pods-SaraminSearchUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8A943C3920E3847700580920 /* SaraminSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SaraminSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -170,6 +174,8 @@
 			children = (
 				8A943C7320E38A7E00580920 /* UIViewController.swift */,
 				8A943C8120E38D5F00580920 /* UITableView.swift */,
+				63C5951D221BD4C2009CECC5 /* String.swift */,
+				63C5951F221BD4F4009CECC5 /* UnicodeScalar.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -484,11 +490,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A943C7920E38BAD00580920 /* Constants.swift in Sources */,
+				63C5951E221BD4C2009CECC5 /* String.swift in Sources */,
 				8A943C7B20E38BE300580920 /* RequestManager.swift in Sources */,
 				8A943C7620E38AB000580920 /* LogHelper.swift in Sources */,
 				8A943C8620E3A57000580920 /* DataResponser.swift in Sources */,
 				8A943C3F20E3847700580920 /* MainViewController.swift in Sources */,
 				8A943C3D20E3847700580920 /* AppDelegate.swift in Sources */,
+				63C59520221BD4F4009CECC5 /* UnicodeScalar.swift in Sources */,
 				8A943C8220E38D5F00580920 /* UITableView.swift in Sources */,
 				8ABC0B3A20E48C530007B53B /* XMLHelper.swift in Sources */,
 				8A943C7F20E38D3D00580920 /* JobViewCell.swift in Sources */,

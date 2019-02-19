@@ -39,7 +39,7 @@ extension MainViewController : StoryboardView{
         //action
         self.searchBar.rx.text
             .throttle(0.3, scheduler: MainScheduler.instance)
-//            .filter{$0 != nil && $0!.count > 0}
+            .filter{ $0 != nil && $0!.count > 0 && !$0!.containsEmoji }
             .map { Reactor.Action.updateQuery($0) }
             .bind(to: reactor.action)
             .disposed(by: self.disposeBag)
