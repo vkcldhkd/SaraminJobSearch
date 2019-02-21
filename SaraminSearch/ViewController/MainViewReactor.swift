@@ -40,7 +40,7 @@ final class MainviewReactor: Reactor {
                 // 1) set current state's query (.setQuery)
                 Observable.just(Mutation.setQuery(query)),
                 // 2) call API and set repos (.setRepos)
-                DataResponser.getItemList(page: 0, keywords: query)
+                DataResponser.getItemList(page: 1, keywords: query)
                     .takeUntil(self.action.filter(isUpdateQueryAction))
                     .map{ Mutation.setItems($0,nextPage: $1) },
                 ])
@@ -48,7 +48,7 @@ final class MainviewReactor: Reactor {
         case .loadNextPage:
             guard !self.currentState.isLoadingNextPage else { return Observable.empty() } // prevent from multiple requests
             guard let page = self.currentState.nextPage else { return Observable.empty() }
-            LogHelper.printLog("self.currentState.page : \(self.currentState.nextPage)")
+//            LogHelper.printLog("self.currentState.page : \(self.currentState.nextPage)")
             
             return Observable.concat([
                 Observable.just(Mutation.setLoadingNextPage(true)),

@@ -45,14 +45,8 @@ extension MainViewController : StoryboardView{
             .disposed(by: self.disposeBag)
         
         
-        
-        self.itemTableView.rx.contentOffset
-            .filter { [weak self] offset in
-                guard let `self` = self else { return false }
-                guard self.itemTableView.frame.height > 0 else { return false }
-                return offset.y + self.itemTableView.frame.height >= self.itemTableView.contentSize.height - 100
-            }
-            .map { _ in Reactor.Action.loadNextPage }
+        self.itemTableView.rx.isReachedBottom
+            .map { Reactor.Action.loadNextPage }
             .bind(to: reactor.action)
             .disposed(by: self.disposeBag)
         
