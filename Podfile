@@ -7,8 +7,8 @@ target 'SaraminSearch' do
 
   # Pods for SaraminSearch
     pod 'ReactorKit'
-    pod 'RxSwift', '~> 4.0.0'
-    pod 'RxCocoa', '~> 4.0.0'
+    pod 'RxSwift'
+    pod 'RxCocoa'
     pod 'RxAlamofire'
     pod "SwiftyXMLParser", :git => 'https://github.com/yahoojapan/SwiftyXMLParser.git'
 

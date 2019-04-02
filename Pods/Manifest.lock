@@ -1,31 +1,23 @@
 PODS:
-  - Alamofire (4.7.2)
-  - ReactorKit (1.1.0):
+  - Alamofire (4.8.2)
+  - ReactorKit (1.2.1):
     - RxSwift (>= 4.0.0)
-  - RxAlamofire (4.2.0):
-    - RxAlamofire/Core (= 4.2.0)
-  - RxAlamofire/Core (4.2.0):
-    - Alamofire (~> 4.5)
-    - RxSwift (~> 4)
-  - RxCocoa (4.0.0):
-    - RxSwift (~> 4.0)
-  - RxSwift (4.0.0)
-  - SwiftyXMLParser (4.1.0)
+  - RxAlamofire (4.4.0):
+    - RxAlamofire/Core (= 4.4.0)
+  - RxAlamofire/Core (4.4.0):
+    - Alamofire (~> 4.8)
+    - RxSwift (~> 4.4)
+  - RxCocoa (4.5.0):
+    - RxSwift (>= 4.4.2, ~> 4.4)
+  - RxSwift (4.5.0)
+  - SwiftyXMLParser (4.3.0)
 
 DEPENDENCIES:
   - ReactorKit
   - RxAlamofire
-  - RxCocoa (~> 4.0.0)
-  - RxSwift (~> 4.0.0)
+  - RxCocoa
+  - RxSwift
   - SwiftyXMLParser (from `https://github.com/yahoojapan/SwiftyXMLParser.git`)
-
-SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
-    - Alamofire
-    - ReactorKit
-    - RxAlamofire
-    - RxCocoa
-    - RxSwift
 
 EXTERNAL SOURCES:
   SwiftyXMLParser:
@@ -33,17 +25,17 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   SwiftyXMLParser:
-    :commit: 1ddcad0a09efb85f2325d994c2169cd9ba116ae3
+    :commit: 9f64c4acce90d897992be200d91af1d56bd20d71
     :git: https://github.com/yahoojapan/SwiftyXMLParser.git
 
 SPEC CHECKSUMS:
-  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
-  ReactorKit: 26470a9eff5094fae909a30af0be7cd0cf8a182d
-  RxAlamofire: 87a9c588541210cc3e4a1f843ccc3ecf3eb98b31
-  RxCocoa: d62846ca96495d862fa4c59ea7d87e5031d7340e
-  RxSwift: fd680d75283beb5e2559486f3c0ff852f0d35334
-  SwiftyXMLParser: b5a79fb8a730903703d0a92d30752a0b05158967
+  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  ReactorKit: 8be57f0527ad1ac2963cd5c338274a46a01e57a3
+  RxAlamofire: ecc5e458ee11250938d23360179eb3a37cd3ee1e
+  RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0
+  RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
+  SwiftyXMLParser: b2e0b0dd0e0fb1ac39869dd4a0c6181847af2945
 
-PODFILE CHECKSUM: ae764ca00c2a252d7d0cebdd64d75b0efdfbed1d
+PODFILE CHECKSUM: 788968301b3255a1e5fc63fa9c465e777f7aea0e
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.4.0

@@ -15,6 +15,8 @@ class XMLHelper {
     }
     
     class func createXML(data : Data) -> XML.Accessor? {
-        return try? XML.parse(data)
+        return XML.parse(data)
+
     }
+    
 }
