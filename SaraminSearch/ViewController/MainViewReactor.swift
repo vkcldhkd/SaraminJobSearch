@@ -52,9 +52,7 @@ final class MainviewReactor: Reactor {
             
             return Observable.concat([
                 Observable.just(Mutation.setLoadingNextPage(true)),
-                
                 DataResponser.getItemList(page: page, keywords: self.currentState.query).filter { !$0.isEmpty && $0.count != 0 && $1 != 0 }.map{ Mutation.appendItems($0,nextPage: $1)},
-                
                 Observable.just(Mutation.setLoadingNextPage(false)),
                 ])
         }
